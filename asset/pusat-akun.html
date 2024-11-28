@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pusat Akun - Investasi Aplikasi</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        /* Resetting basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #E60012;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .navbar img {
+            width: 50px;
+            height: auto;
+            margin-right: 15px;
+            object-fit: contain;
+        }
+
+        .navbar h1 {
+            font-size: 26px;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            flex: 1; /* Membuat konten utama fleksibel */
+        }
+
+        .account-info {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-top: 5px solid #E60012;
+        }
+
+        .account-info h2 {
+            font-size: 24px;
+            color: #E60012;
+            margin-bottom: 10px;
+        }
+
+        .account-info p {
+            font-size: 22px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* Grid layout for buttons */
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        /* Buttons */
+        .button-container a {
+            text-decoration: none;
+            flex: 1 1 calc(50% - 20px);
+            max-width: 300px;
+        }
+
+        .button-container button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #E60012;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .button-container button:hover {
+            background-color: #C00010;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .button-container button span {
+            margin-right: 8px;
+            font-size: 18px;
+        }
+
+        /* Footer Buttons */
+        .footer-buttons {
+            background-color: #fff;
+            border-top: 2px solid #E60012;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-buttons a {
+            text-decoration: none;
+            color: #E60012;
+            font-size: 14px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-buttons a:hover {
+            color: #C00010;
+        }
+
+        .footer-buttons a span {
+            font-size: 24px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .button-container a {
+                flex: 1 1 100%;
+            }
+
+            .button-container button {
+                font-size: 12px;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <img src="logohonda.jpg" alt="Logo Astra Honda Motor"> <!-- Ganti 'logo.png' dengan URL atau path file logo Anda -->
+    <h1>Pusat Akun</h1>
+</div>
+
+<div class="container">
+    <!-- Informasi Akun -->
+    <div class="account-info">
+        <h2>Saldo Anda</h2>
+        <p>Rp 0</p>
+    </div>
+
+    <!-- Tombol-tombol Pusat Akun -->
+    <div class="button-container">
+        <a href="qris.html">
+            <button>
+                <span class="material-icons">attach_money</span> Deposit
+            </button>
+        </a>
+        <a href="tarik.html">
+            <button>
+                <span class="material-icons">credit_card</span> Tarik
+            </button>
+        </a>
+        <a href="riwayatinvestasi.html">
+            <button>
+                <span class="material-icons">history</span> Riwayat Investasi
+            </button>
+        </a>
+        <a href="https://t.me/PTHONDAASTRAINDONESIAOFFICIAL" target="_blank">
+            <button>
+                <span class="material-icons">message</span> Grup Telegram
+            </button>
+        </a>
+        <a href="bantuan.html">
+            <button>
+                <span class="material-icons">help</span> Bantuan
+            </button>
+        </a>
+        <a href="sedangberjalan.html">
+            <button>
+                <span class="material-icons">settings</span> Sedang Berjalan
+            </button>
+        </a>
+    </div>
+</div>
+
+<!-- Footer Buttons -->
+<div class="footer-buttons">
+    <a href="home.html">
+        <span class="material-icons">home</span>
+        Home
+    </a>
+    <a href="dashboard.html">
+        <span class="material-icons">store</span>
+        Produk
+    </a>
+    <a href="tim.html">
+        <span class="material-icons">groups</span>
+        Team
+    </a>
+    <a href="pusat-akun.html">
+        <span class="material-icons">person</span>
+        My Profile
+    </a>
+</div>
+
+</body>
+</html>

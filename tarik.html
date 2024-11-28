@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penarikan Dana - Investasi Aplikasi</title>
+    <!-- Link Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Link Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #E60012;
+            padding: 15px;
+            text-align: center;
+            color: white;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .navbar-logo {
+            width: 40px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Form Penarikan */
+        .section-title {
+            font-size: 28px;
+            color: #E60012;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #333;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        select, input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .submit-btn {
+            background-color: #E60012;
+            color: white;
+            font-size: 18px;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #D50012;
+        }
+
+        .footer {
+            background-color: #E60012;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 50px;
+        }
+
+        .bottom-buttons {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            border-top: 2px solid #E60012;
+            display: flex;
+            justify-content: space-around;
+            padding: 8px 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .bottom-buttons a {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 8px 12px;
+            color: #E60012;
+            font-size: 10px;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .bottom-buttons a .material-icons {
+            font-size: 24px;
+            margin-bottom: 4px;
+        }
+
+        .bottom-buttons a:hover {
+            color: #c00010;
+            transform: scale(1.1);
+        }
+
+        /* Styles for hiding error messages */
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .success-message {
+            color: green;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <img src="logohonda.jpg" alt="Logo" class="navbar-logo">
+    <h1>Investasi Aplikasi</h1>
+</div>
+
+<!-- Konten -->
+<div class="container">
+
+    <!-- Penarikan Dana -->
+    <section>
+        <h2 class="section-title">Form Penarikan Dana</h2>
+
+        <!-- Formulir Penarikan Dana -->
+        <form id="withdrawal-form" onsubmit="return handleFormSubmission(event)">
+            
+            <div class="form-group">
+                <label for="payment-method">Pilih Bank / E-wallet</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="">-- Pilih Bank / E-wallet --</option>
+                    <option value="bank-bca">Bank BCA</option>
+                    <option value="bank-bca-syariah">Bank BCA Syariah</option>
+                    <option value="bank-mandiri">Bank Mandiri</option>
+                    <option value="bank-bri">Bank BRI</option>
+                    <option value="bank-bsi">Bank BSI</option>
+                    <option value="bank-permata">Bank Permata</option>
+                    <option value="bank-permata-syariah">Bank Permata Syariah</option>
+                    <option value="bank-bjb-syariah">Bank BJB Syariah</option>
+                    <option value="bank-bni">Bank BNI</option>
+                    <option value="bank-btn">Bank BTN</option>
+                    <option value="bank-CIMB-Niaga">Bank CIMB Niaga</option>
+                    <option value="bank-CIMB-Niaga-Syariah">Bank CIMB Niaga Syariah</option>
+                    <option value="city-bank">City Bank</option>
+                    <option value="bank-Danamon">Bank Danamon</option>
+                    <option value="bank-Sinarmas">Bank Sinarmas</option>
+                    <option value="bank-BPD-ACEH">Bank BPD Aceh Syariah</option>
+                    <option value="bank-BPD-Bali">Bank Bali</option>
+                    <option value="bank-jateng">Bank Jateng</option>
+                    <option value="bank-BPD-riau-Syariah">Bank BPD riau Kepri syariah</option>
+                    <option value="gopay">GoPay</option>
+                    <option value="ovo">OVO</option>
+                    <option value="dana">DANA</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="account-number">Nomor Rekening / Akun E-wallet</label>
+                <input type="number" id="account-number" name="account-number" placeholder="Masukkan nomor rekening" required>
+            </div>
+
+            <div class="form-group">
+                <label for="account-name">Nama Pemilik Rekening</label>
+                <input type="text" id="account-name" name="account-name" placeholder="Masukkan nama pemilik rekening" required>
+            </div>
+
+            <div class="form-group">
+                <label for="withdrawal-amount">Jumlah Penarikan (Minimal Rp 25.000)</label>
+                <input type="number" id="withdrawal-amount" name="withdrawal-amount" placeholder="Masukkan jumlah penarikan" required>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Kirim Permintaan Penarikan</button>
+
+            <!-- Error message -->
+            <p id="error-message" class="error-message hidden">Terjadi kesalahan. Harap periksa data yang Anda masukkan.</p>
+            <p id="balance-error" class="error-message hidden">Saldo Anda tidak cukup untuk penarikan ini.</p>
+            <p id="success-message" class="success-message hidden">Permintaan penarikan Anda berhasil diajukan.</p>
+        </form>
+    </section>
+
+</div>
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2024-2029 PT Honda Astra Indonesia. semua hak dilindungi undang undang.</p>
+    </div>
+</footer>
+
+<!-- Bottom Buttons -->
+<div class="bottom-buttons">
+    <a href="home.html">
+        <span class="material-icons">home</span>
+        Home
+    </a>
+    <a href="dashboard.html">
+        <span class="material-icons">store</span>
+        Produk
+    </a>
+    <a href="tim.html">
+        <span class="material-icons">groups</span>
+        Team
+    </a>
+    <a href="pusat-akun.html">
+        <span class="material-icons">person</span>
+        My Profile
+    </a>
+</div>
+
+<script>
+    // Simulasi pengiriman data
+    function handleFormSubmission(event) {
+        event.preventDefault(); // Mencegah pengiriman form sebenarnya
+
+        // Menangkap data form
+        const paymentMethod = document.getElementById("payment-method").value;
+        const accountNumber = document.getElementById("account-number").value;
+        const accountName = document.getElementById("account-name").value;
+        const withdrawalAmount = parseInt(document.getElementById("withdrawal-amount").value);
+
+        // Misalnya, saldo pengguna adalah 100.000 (harus lebih dari minimal penarikan)
+        const userBalance = 0;
+
+        // Validasi input (bisa diperluas sesuai kebutuhan)
+        if (!paymentMethod || !accountNumber || !accountName || !withdrawalAmount) {
+            document.getElementById("error-message").classList.remove("hidden");
+            return;
+        }
+
+        // Memeriksa apakah jumlah penarikan valid dan saldo cukup
+        if (withdrawalAmount < 25000) {
+            document.getElementById("error-message").classList.remove("hidden");
+            document.getElementById("error-message").textContent = "Jumlah penarikan minimal adalah Rp 25.000";
+            return;
+        }
+
+        if (withdrawalAmount > userBalance) {
+            document.getElementById("balance-error").classList.remove("hidden");
+            return;
+        }
+
+        // Menyembunyikan pesan error jika input valid
+        document.getElementById("error-message").classList.add("hidden");
+        document.getElementById("balance-error").classList.add("hidden");
+
+        // Menampilkan pesan sukses
+        document.getElementById("success-message").classList.remove("hidden");
+        alert(`Permintaan penarikan untuk ${paymentMethod} telah diajukan!\nNomor Rekening: ${accountNumber}\nNama Pemilik: ${accountName}\nJumlah: Rp ${withdrawalAmount}`);
+    }
+</script>
+
+</body>
+</html>
+

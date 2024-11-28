@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('logohonda.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #E60012;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .navbar img {
+            width: 50px;
+            height: auto;
+            margin-right: 15px;
+            object-fit: contain;
+        }
+
+        .navbar h1 {
+            font-size: 22px;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .container h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-top: 8px;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 20px;
+            border-radius: 5px;
+            background-color: #0073fe;
+            color: white;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        .button:hover:not(:disabled) {
+            background-color: #005bb5;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* Footer Buttons */
+        .footer-buttons {
+            background-color: #fff;
+            border-top: 2px solid #E60012;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: auto;
+        }
+
+        .footer-buttons a {
+            text-decoration: none;
+            color: #E60012;
+            font-size: 14px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-buttons a:hover {
+            color: #C00010;
+        }
+
+        .footer-buttons a span {
+            font-size: 24px;
+        }
+
+        /* Responsif untuk layar kecil */
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .container {
+                padding: 20px;
+                max-width: 90%;
+            }
+
+            .container h1 {
+                font-size: 1.5em;
+            }
+
+            .form-group input {
+                font-size: 14px;
+                padding: 12px;
+            }
+
+            .button {
+                font-size: 14px;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <img src="logohonda.jpg" alt="Logo Astra Honda Motor">
+    <h1>Login</h1>
+</div>
+
+<div class="container">
+    <h1>Login</h1>
+    <div class="form-group">
+        <label for="phone">Nomor HP</label>
+        <input type="tel" id="phone" name="phone" placeholder="Masukkan nomor HP">
+    </div>
+
+    <div class="form-group">
+        <label for="password">Kata Sandi</label>
+        <input type="password" id="password" name="password" placeholder="Masukkan kata sandi">
+    </div>
+
+    <div class="button-container">
+        <button id="loginButton" class="button" disabled onclick="redirectToNextPage()">Login</button>
+    </div>
+
+    <div class="footer">
+        <p>Masukkan nomor HP dan kata sandi untuk melanjutkan.</p>
+    </div>
+</div>
+
+<script>
+    const phoneInput = document.getElementById('phone');
+    const passwordInput = document.getElementById('password');
+    const loginButton = document.getElementById('loginButton');
+
+    // Fungsi untuk memeriksa apakah semua input sudah diisi
+    function validateInputs() {
+        if (phoneInput.value.trim() !== '' && passwordInput.value.trim() !== '') {
+            loginButton.disabled = false; // Aktifkan tombol login
+        } else {
+            loginButton.disabled = true; // Nonaktifkan tombol login
+        }
+    }
+
+    // Tambahkan event listener untuk input
+    phoneInput.addEventListener('input', validateInputs);
+    passwordInput.addEventListener('input', validateInputs);
+
+    // Fungsi untuk mengarahkan ke halaman berikutnya (tanpa validasi login)
+    function redirectToNextPage() {
+        setTimeout(() => {
+            window.location.href = "dashboard.html"; // Ganti "dashboard.html" dengan halaman tujuan
+        }, 1000); // Arahkan ke halaman lain setelah 1 detik
+    }
+</script>
+
+</body>
+</html>
+
+

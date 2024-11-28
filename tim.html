@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tim - Investasi Aplikasi</title>
+    <!-- Link Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Link Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #E60012;
+            padding: 15px;
+            text-align: center;
+            color: white;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .navbar-logo {
+            width: 40px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Content Section */
+        .section-title {
+            font-size: 28px;
+            color: #E60012;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .section-content {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #E60012;
+        }
+
+        /* Button Styles */
+        .copy-link-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #E60012;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .copy-link-button:hover {
+            background-color: #D50012;
+        }
+
+        .bottom-buttons {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            border-top: 2px solid #E60012;
+            display: flex;
+            justify-content: space-around;
+            padding: 8px 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .bottom-buttons a {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 8px 12px;
+            color: #E60012;
+            font-size: 10px;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .bottom-buttons a .material-icons {
+            font-size: 24px;
+            margin-bottom: 4px;
+        }
+
+        .bottom-buttons a:hover {
+            color: #c00010;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #E60012;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 50px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <img src="logohonda.jpg" alt="Logo" class="navbar-logo">
+    <h1>Team</h1>
+</div>
+
+<!-- Konten -->
+<div class="container">
+
+    <!-- Tim dan Referral -->
+    <section>
+        <h2 class="section-title">Keuntungan Menjadi Referral</h2>
+        <div class="section-content">
+            <p>Investasi Aplikasi memberikan kesempatan besar bagi Anda untuk mendapatkan penghasilan tambahan melalui sistem referral yang mudah. Setiap kali Anda berhasil mengajak teman, keluarga, atau siapa saja untuk bergabung sebagai anggota tim Anda, Anda akan mendapatkan <span class="highlight">komisi sebesar 35%</span> dari setiap transaksi atau investasi yang dilakukan oleh referral yang Anda ajak. Ini adalah kesempatan emas untuk memperoleh penghasilan pasif hanya dengan memanfaatkan jaringan Anda!</p>
+        </div>
+    </section>
+
+    <!-- Cara Mengajak -->
+    <section>
+        <h2 class="section-title">Cara Mengajak Teman atau Saudara</h2>
+        <div class="section-content">
+            <p>Untuk mulai mendapatkan komisi dari referral, Anda hanya perlu mengikuti langkah-langkah berikut:</p>
+            <ul>
+                <li>1. <span class="highlight">Bagikan link referral</span> yang Anda dapatkan setelah mendaftar ke aplikasi ini kepada teman, saudara, atau orang lain yang tertarik untuk bergabung.</li>
+                <li>2. Ajak mereka untuk mendaftar dan mulai berinvestasi melalui aplikasi ini.</li>
+                <li>3. Setiap kali mereka melakukan transaksi investasi melalui aplikasi, Anda akan mendapatkan komisi sebesar 35% dari setiap transaksi yang mereka lakukan.</li>
+            </ul>
+            <p>Komisi Anda akan langsung tercatat dalam saldo akun Anda, dan dapat ditarik kapan saja sesuai dengan ketentuan yang berlaku.</p>
+        </div>
+    </section>
+
+    <!-- Link Referral dan Tombol Salin -->
+    <section>
+        <h2 class="section-title">Salin Link Referral Anda</h2>
+        <div class="section-content">
+            <p>Untuk mulai membagikan link referral Anda, klik tombol di bawah ini untuk menyalin link referral Anda:</p>
+            <!-- Tombol untuk menyalin link referral -->
+            <button class="copy-link-button" onclick="copyReferralLink()">Salin Link Referral</button>
+        </div>
+    </section>
+
+    <!-- Keuntungan Bagi Pengguna -->
+    <section>
+        <h2 class="section-title">Keuntungan Bagi Pengguna</h2>
+        <div class="section-content">
+            <p>Dengan mengajak lebih banyak teman untuk bergabung, Anda tidak hanya mendapatkan penghasilan tambahan, tetapi juga memperluas jaringan Anda di dunia investasi digital. Selain itu, Anda dapat:</p>
+            <ul>
+                <li>Mendapatkan <span class="highlight">komisi langsung</span> dari setiap transaksi yang dilakukan oleh referral Anda.</li>
+                <li>Meningkatkan <span class="highlight">kemampuan investasi digital</span> dengan berbagi pengalaman dan pengetahuan kepada orang lain.</li>
+                <li>Memperoleh <span class="highlight">insentif tambahan</span> berdasarkan performa dan pertumbuhan tim Anda dalam aplikasi.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section>
+        <h2 class="section-title">Ketentuan komisi referral</h2>
+        <div class="section-content">
+            <p>Anda akan mendapatkan komisi 35% dari setiap referral yang berinvestasi melalui referral anda.</p>
+            <p>Setiap team anda berhasil melakukan investasi, maka komisi anda akan masuk otomatis ke saldo akun anda.</p>
+            <p>anda dapat menarik komisi yang anda dapatkan dari mengundang referral ke dalam akun rekening bank anda setiap hari dengan minimal penarikan Rp25.000.</p>
+        </div>
+    </section>
+
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2024-2029 PT Honda Astra Indonesia. semua hak dilindungi undang undang.</p>
+    </div>
+</footer>
+
+<!-- Bottom Buttons -->
+<div class="bottom-buttons">
+    <a href="home.html">
+        <span class="material-icons">home</span>
+        Home
+    </a>
+    <a href="dashboard.html">
+        <span class="material-icons">shopping_cart</span>
+        Produk
+    </a>
+    <a href="#">
+        <span class="material-icons">group</span>
+        Team
+    </a>
+    <a href="pusat-akun.html">
+        <span class="material-icons">account_circle</span>
+        My Profile
+    </a>
+</div>
+
+<script>
+    // Fungsi untuk menyalin link referral ke clipboard
+    function copyReferralLink() {
+        // Link referral yang akan disalin
+        var referralLink = "https://www.investasiapp.com/referral/yourlink";
+
+        // Membuat input sementara untuk menyalin link
+        var tempInput = document.createElement("input");
+        tempInput.value = referralLink;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+
+        alert("Link referral telah disalin! Sekarang Anda bisa membagikannya.");
+    }
+</script>
+
+</body>
+</html>
+
+
+

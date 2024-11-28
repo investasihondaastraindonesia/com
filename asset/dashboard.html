@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>investasi PT HONDA ASTRA INDONESIA</title>
+    <!-- Link Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Link Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #E60012;
+            padding: 15px;
+            text-align: center;
+            color: white;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .navbar-logo {
+            width: 50px;
+            height: auto;
+            margin-right: 15px;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Product List */
+        .product-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .product-card {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .product-info {
+            flex: 1;
+            padding: 0 10px;
+            font-size: 14px;
+        }
+
+        .product-info h3 {
+            margin: 0;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .product-info p {
+            margin: 5px 0;
+            color: #666;
+            font-size: 13px;
+        }
+
+        .buy-button {
+            background-color: #E60012;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .buy-button:hover {
+            background-color: #cc000f;
+        }
+
+        /* Special style for product 9 and 10 */
+        .buy-button.special {
+            background: linear-gradient(135deg, #E60012, #000);
+        }
+
+        .buy-button.special:hover {
+            background: linear-gradient(135deg, #cc000f, #333);
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .product-card {
+                flex-direction: row-reverse; /* Gambar di kiri dan tombol di kanan untuk perangkat kecil */
+                align-items: flex-start;
+            }
+
+            .product-card img {
+                width: 60px;
+                height: 60px;
+            }
+
+            .product-info h3 {
+                font-size: 14px;
+            }
+
+            .product-info p {
+                font-size: 12px;
+            }
+
+            .buy-button {
+                font-size: 12px;
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-card {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-card img {
+                margin: 10px 0 0;
+                width: 70px;
+                height: 70px;
+            }
+
+            .buy-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Bottom Buttons */
+        .bottom-buttons {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            border-top: 2px solid #E60012;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .bottom-buttons a {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 10px 20px;
+            color: #E60012;
+            font-size: 12px;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .bottom-buttons a .material-icons {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .bottom-buttons a:hover {
+            color: #c00010;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <img src="logohonda.jpg" alt="Logo" class="navbar-logo">
+    <h1> Produk Investasi</h1>
+</div>
+
+<!-- Konten -->
+<div class="container">
+    <h2>PT HONDA ASTRA INDONESIA</h2>
+    <div class="product-list">
+        <!-- Product 1 -->
+        <div class="product-card">
+            <img src="verza.jpg" alt="Produk">
+            <div class="product-info">
+                <h3>Honda CB 150 Verza</h3>
+                <p>Harga investasi: Rp 90,000</p>
+                <p>Masa investasi: 25 Hari</p>
+                <p>Pendapatan Harian: Rp 15,000</p>
+                <p>Total Pendapatan: Rp 375,000</p>
+                <p>Keuntungan mulai dapat ditarik setelah 2 hari berjalan</p>
+            </div>
+            <button class="buy-button" onclick="showNotification()">
+                <i class="fas fa-dollar-sign"></i> Investasi
+            </button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+            <img src="cb150x.jpg" alt="Produk">
+            <div class="product-info">
+                <h3>Honda CB 150 X</h3>
+                <p>Harga investasi: Rp 230,000</p>
+                <p>Masa investasi: 25 Hari</p>
+                <p>Pendapatan Harian: Rp 30,000</p>
+                <p>Total Pendapatan: Rp 750,000</p>
+                <p>Keuntungan mulai dapat ditarik setelah 1 hari berjalan</p>
+            </div>
+            <button class="buy-button" onclick="showNotification()">
+                <i class="fas fa-dollar-sign"></i> Investasi
+            </button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+            <img src="adv.jpg" alt="Produk">
+            <div class="product-info">
+                <h3>Honda ADV 160</h3>
+                <p>Harga investasi: Rp 480,000</p>
+                <p>Masa investasi: 20 Hari</p>
+                <p>Pendapatan Harian: Rp 65,000</p>
+                <p>Total Pendapatan: Rp 1,300,000</p>
+                <p>Keuntungan mulai dapat ditarik setelah 1 hari berjalan</p>
+            </div>
+            <button class="buy-button" onclick="showNotification()">
+                <i class="fas fa-dollar-sign"></i> Investasi
+            </button>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card">
+            <img src="crf150.jpg" alt="Produk">
+            <div class="product-info">
+                <h3>Honda CRF 150 L</h3>
+                <p>Harga investasi: Rp 900,000</p>
+                <p>Masa investasi: 20 Hari</p>
+                <p>Pendapatan Harian: Rp 178,000</p>
+                <p>Total Pendapatan: Rp 3,560,000</p>
+                <p>Keuntungan mulai dapat ditarik setelah 1 hari berjalan</p>
+            </div>
+            <button class="buy-button" onclick="showNotification()">
+                <i class="fas fa-dollar-sign"></i> Investasi
+            </button>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product-card">
+            <img src="cbr150.jpg" alt="Produk">
+            <div class="product-info">
+                <h3>Honda CBR 150 R</h3>
+                <p>Harga investasi: Rp 1,600,000</p>
+                <p>Masa investasi: 20 Hari</p>
+                <p>Pendapatan Harian: Rp 260,000</p>
+                <p>Total Pendapatan: Rp 5,200,000</p>
+                <p>Keuntungan mulai dapat ditarik setelah 1 hari berjalan</p>
+            </div>
+            <button class="buy-button" onclick="showNotification()">
+                <i class="fas fa-dollar-sign"></i> Investasi
+            </button>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="product-card">
+            <img src="cbr250.jpg" alt="Produk">
+            <div class="product-info">
+                <h3>Honda CBR 250 RR</h3>
+                <p>Harga investasi: RP 2,300,000</p>
+                <p>Masa investasi: 15 Hari</p>
+                <p>Pendapatan Harian: Rp 470,000</p>
+                <p>Total Pendapatan: Rp 7,050,000</p>
+                <p>Keuntungan mulai dapat ditarik setelah 1 hari berjalan</p>
+            </div>
+            <button class="buy-button" onclick="showNotification()">
+                <i class="fas fa-dollar-sign"></i> Investasi
+            </button>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="product-card">
+            <img src="crf250.jpg" alt="Produk">
+            <div class="product-info">
+                <h3>Honda CRF 250 L</h3>
+                <p>Harga investasi: Rp 3,100,000</p>
+                <p>Masa investasi: 15 Hari</p>
+                <p>Pendapatan Harian: Rp 590,000</p>
+                <p>Total Pendapatan: Rp 8,850,000</p>
+                <p>Keuntungan mulai dapat ditarik setelah 1 hari berjalan</p>
+            </div>
+            <button class="buy-button" onclick="showNotification()">
+                <i class="fas fa-dollar-sign"></i> Investasi
+            </button>
+        </div>
+
+        <!-- Product 8 -->
+        <div class="product-card">
+            <img src="forza.jpg" alt="Produk">
+            <div class="product-info">
+                <h3>Honda forza 250</h3>
+                <p>Harga investasi: Rp 5,700,000</p>
+                <p>Masa investasi: 15 Hari</p>
+                <p>Pendapatan Harian: Rp 1,340,000</p>
+                <p>Total Pendapatan: Rp 20,100,000</p>
+                <p>Keuntungan mulai dapat ditarik setelah 1 hari berjalan</p>
+            </div>
+            <button class="buy-button" onclick="showNotification()">
+                <i class="fas fa-dollar-sign"></i> Investasi
+            </button>
+        </div>
+
+        <!-- Product 9 (Special Style) -->
+        <div class="product-card">
+            <img src="vultus.jpg" alt="Produk">
+            <div class="product-info">
+                <h3>Honda NM 4 Vultus 750</h3>
+                <p>Harga investasi: Rp 24,300,000</p>
+                <p>Masa investasi: 15 Hari</p>
+                <p>Pendapatan Harian: Rp 16,800,000</p>
+                <p>Total Pendapatan: Rp 252,000,000</p>
+                <p>Keuntungan mulai dapat ditarik setelah 1 hari berjalan</p>
+            </div>
+            <button class="buy-button special" onclick="showSpecialNotification()">
+                <i class="fas fa-dollar-sign"></i> Belum dibuka
+            </button>
+        </div>
+
+        <!-- Product 10 (Special Style) -->
+        <div class="product-card">
+            <img src="goldwing.jpg" alt="Produk">
+            <div class="product-info">
+                <h3>Honda gold wing 1.800</h3>
+                <p>Harga investasi: Rp 46,700,000</p>
+                <p>Masa investasi: 15 Hari</p>
+                <p>Pendapatan Harian: Rp 23,000,000</p>
+                <p>Total Pendapatan: Rp 345,000,000</p>
+                <p>Keuntungan mulai dapat ditarik setelah 1 hari berjalan</p>
+            </div>
+            <button class="buy-button special" onclick="showSpecialNotification()">
+                <i class="fas fa-dollar-sign"></i> Belum dibuka
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Bottom Buttons -->
+<div class="bottom-buttons">
+    <a href="home.html">Home <i class="material-icons">home</i></a>
+    <a href="dashboard.html">Produk <i class="material-icons">store</i></a>
+    <a href="tim.html">Team <i class="material-icons">groups</i></a>
+    <a href="pusat-akun.html">My Profile <i class="material-icons">person</i></a>
+</div>
+
+<script>
+    function showNotification() {
+        alert("Anda tidak memiliki saldo yang cukup untuk melakukan investasi.");
+    }
+
+    function showSpecialNotification() {
+        alert("Produk investasi ini belum di buka di pasar indonesia.");
+    }
+</script>
+
+</body>
+</html>
+
+
+

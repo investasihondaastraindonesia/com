@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Daftar</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('logohonda.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #E60012;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .navbar img {
+            width: 50px;
+            height: auto;
+            margin-right: 15px;
+            object-fit: contain;
+        }
+
+        .navbar h1 {
+            font-size: 22px;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            margin: 20px auto;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .container h1 {
+            color: #1a1a1a;
+            margin-bottom: 25px;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            color: #555;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            border-color: #0073fe;
+            outline: none;
+        }
+
+        .button {
+            padding: 12px 20px;
+            border-radius: 5px;
+            background-color: #0073fe;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .button:hover:not(:disabled) {
+            background-color: #005bb5;
+        }
+
+        .notification {
+            display: none;
+            margin-top: 20px;
+            padding: 12px;
+            border: 1px solid #0073fe;
+            border-radius: 5px;
+            background-color: #e0f7ff;
+            color: #0073fe;
+            font-size: 14px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Footer Buttons */
+        .footer-buttons {
+            background-color: #fff;
+            border-top: 2px solid #E60012;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: auto;
+        }
+
+        .footer-buttons a {
+            text-decoration: none;
+            color: #E60012;
+            font-size: 14px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-buttons a:hover {
+            color: #C00010;
+        }
+
+        .footer-buttons a span {
+            font-size: 24px;
+        }
+
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .container {
+                width: 100%;
+                padding: 25px;
+            }
+
+            .container h1 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <img src="logohonda.jpg" alt="Logo Astra Honda Motor">
+    <h1>Daftar Akun</h1>
+</div>
+
+<div class="container">
+    <h1>Daftar Akun Baru</h1>
+    <div class="form-group">
+        <label for="phone">Nomor HP</label>
+        <input type="tel" id="phone" placeholder="Masukkan nomor HP" oninput="validateForm()">
+    </div>
+    <div class="form-group">
+        <label for="password">Kata Sandi</label>
+        <input type="password" id="password" placeholder="Masukkan kata sandi" oninput="validateForm()">
+    </div>
+    <button id="registerButton" class="button" disabled onclick="simulateRegister()">Daftar</button>
+    <div id="notification" class="notification">
+        Pendaftaran berhasil! Silakan login untuk melanjutkan.
+    </div>
+</div>
+
+<script>
+    function validateForm() {
+        const phone = document.getElementById('phone').value.trim();
+        const password = document.getElementById('password').value.trim();
+        const registerButton = document.getElementById('registerButton');
+
+        // Periksa apakah nomor HP dan kata sandi tidak kosong
+        if (phone && password) {
+            registerButton.disabled = false; // Aktifkan tombol
+        } else {
+            registerButton.disabled = true; // Nonaktifkan tombol
+        }
+    }
+
+    function simulateRegister() {
+        const notification = document.getElementById('notification');
+        notification.style.display = 'block'; // Tampilkan notifikasi
+
+        // Tidak ada pengiriman data ke server, hanya simulasi
+        console.log("Simulasi pendaftaran berhasil dengan data:");
+        console.log("Nomor HP:", document.getElementById('phone').value);
+        console.log("Kata Sandi:", document.getElementById('password').value);
+
+        // Tunggu 1 detik, lalu arahkan ke halaman login
+        setTimeout(() => {
+            window.location.href = "login.html"; // Ganti dengan halaman login Anda
+        }, 1000); // 1 detik
+    }
+</script>
+
+</body>
+</html>
+
+
